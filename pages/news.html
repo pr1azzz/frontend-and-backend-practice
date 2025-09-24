@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div id="header">Хэдер</div>
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
+    <div class="page-container">
+        <div class="header">Новости</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="section-title">Последние новости</h1>
+            
+            <div class="news-item">
+                <h2>Запуск нового курса по веб-разработке</h2>
+                <p class="news-date">01.01.2025 12:00 | Автор: Астафьев Р.У.</p>
+                <p>Мы рады сообщить о запуске нового курса по фронтенд и бэкенд разработке. Курс включает в себя современные технологии и практические задания.</p>
+            </div>
+            
+            <div class="news-item">
+                <h2>Обновление материалов практических занятий</h2>
+                <p class="news-date">02.01.2025 14:30 | Автор: Иванов И.И.</p>
+                <p>Все материалы практических занятий были обновлены в соответствии с последними изменениями в программе обучения.</p>
+            </div>
+            
+            <div class="news-item">
+                <h2>Вебинар по основам CSS</h2>
+                <p class="news-date">03.01.2025 10:15 | Автор: Петров П.П.</p>
+                <p>Приглашаем всех желающих на бесплатный вебинар по основам CSS, который состоится 10 января 2025 года.</p>
+            </div>
+        </div>
+        <div class="footer">© 2025 Портфолио. Все права защищены.</div>
     </div>
-    <div id="content">
-        <div class="news-item">
-            <h2>Новость 1</h2>
-            <p><strong>01.01.2025 12:00</strong> | Автор: Астафьев Р.У.</p>
-            <p>Текст первой новости. Здесь может быть описание событий, объявлений или других важных моментов.</p>
-        </div>
-        <div class="news-item">
-            <h2>Новость 2</h2>
-            <p><strong>02.01.2025 14:30</strong> | Автор: Иванов И.И.</p>
-            <p>Текст второй новости. Например, информация о новых практических занятиях или обновлениях в курсе.</p>
-        </div>
-        <div class="news-item">
-            <h2>Новость 3</h2>
-            <p><strong>03.01.2025 10:15</strong> | Автор: Петров П.П.</p>
-            <p>Текст третьей новости. Возможно, анонс вебинара или изменение расписания.</p>
-        </div>
-    </div>
-    <div id="footer">Футер</div>
 </body>
 </html>
