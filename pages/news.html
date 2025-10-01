@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
+    <title>Новости - Семестровая работа</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Новости</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Новости</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
@@ -17,29 +20,41 @@
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
-            <h1 class="section-title">Последние новости</h1>
+        </nav>
+
+        <main class="content">
+            <h2 class="section-title">Последние новости</h2>
             
-            <div class="news-item">
-                <h2>Запуск нового курса по веб-разработке</h2>
-                <p class="news-date">01.01.2025 12:00 | Автор: Астафьев Р.У.</p>
-                <p>Мы рады сообщить о запуске нового курса по фронтенд и бэкенд разработке. Курс включает в себя современные технологии и практические задания.</p>
-            </div>
-            
-            <div class="news-item">
-                <h2>Обновление материалов практических занятий</h2>
-                <p class="news-date">02.01.2025 14:30 | Автор: Иванов И.И.</p>
-                <p>Все материалы практических занятий были обновлены в соответствии с последними изменениями в программе обучения.</p>
-            </div>
-            
-            <div class="news-item">
-                <h2>Вебинар по основам CSS</h2>
-                <p class="news-date">03.01.2025 10:15 | Автор: Петров П.П.</p>
-                <p>Приглашаем всех желающих на бесплатный вебинар по основам CSS, который состоится 10 января 2025 года.</p>
-            </div>
-        </div>
-        <div class="footer">© 2025 Портфолио. Все права защищены.</div>
+            <section class="news-container">
+                <article class="news-card">
+                    <h3 class="news-title">Запуск нового проекта</h3>
+                    <p class="news-meta">01.01.2025 12:00 | Автор: Иванов И.И.</p>
+                    <p class="news-text">Мы рады сообщить о запуске нового проекта, который изменит подход к веб-разработке. Проект включает в себя современные технологии и инновационные решения для создания адаптивных и быстрых веб-приложений.</p>
+                </article>
+
+                <article class="news-card">
+                    <h3 class="news-title">Обновление дизайна портфолио</h3>
+                    <p class="news-meta">15.12.2024 14:30 | Автор: Иванов И.И.</p>
+                    <p class="news-text">Завершено масштабное обновление дизайна портфолио. Теперь сайт использует современные CSS-технологии, включая Grid и Flexbox, для создания адаптивного и привлекательного интерфейса.</p>
+                </article>
+
+                <article class="news-card">
+                    <h3 class="news-title">Изучение новых технологий</h3>
+                    <p class="news-meta">30.11.2024 10:15 | Автор: Иванов И.И.</p>
+                    <p class="news-text">Продолжаем изучение современных фронтенд-технологий. В планах - освоение React.js и Node.js для создания полноценных веб-приложений с современным стеком технологий.</p>
+                </article>
+
+                <article class="news-card">
+                    <h3 class="news-title">Успешная защита проекта</h3>
+                    <p class="news-meta">20.11.2024 16:45 | Автор: Иванов И.И.</p>
+                    <p class="news-text">Состоялась успешная защита семестрового проекта по фронтенд-разработке. Проект получил высокую оценку за современный дизайн и качественную реализацию.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Футер</p>
+        </footer>
     </div>
 </body>
 </html>

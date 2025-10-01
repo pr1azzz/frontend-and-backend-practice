@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары</title>
+    <title>Товары - Семестровая работа</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Товары</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Наши товары</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
@@ -17,37 +20,44 @@
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
-            <h1 class="section-title">Наши товары</h1>
-            
-            <div class="products-container">
-                <div class="product-card">
-                    <img src="../images/img.tovar1.jpg" alt="Товар 1" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Бульдозер</h3>
-                        <p class="product-price">1000 руб.</p>
-                    </div>
-                </div>
+        </nav>
+
+        <main class="content">
+            <section>
+                <h2 class="section-title">Каталог товаров</h2>
+                <p>Мы предлагаем широкий ассортимент качественных товаров по доступным ценам.</p>
                 
-                <div class="product-card">
-                    <img src="../images/Img.tovar2.webp" alt="Товар 2" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Кухонный набор</h3>
-                        <p class="product-price">1500 руб.</p>
-                    </div>
+                <div class="products-grid">
+                    <article class="product-card">
+                        <img src="../images/img.tovar1.jpg" alt="Товар 1" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Трактор</h3>
+                            <p class="product-price">100.000 ₽</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="../images/Img.tovar2.webp" alt="Товар 2" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Кухонный набор 1</h3>
+                            <p class="product-price">75.000 ₽</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="../images/img.tovar3.jpg" alt="Товар 3" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Кухонный набор 2</h3>
+                            <p class="product-price">32.000 ₽</p>
+                        </div>
+                    </article>
                 </div>
-                
-                <div class="product-card">
-                    <img src="../images/img.tovar3.jpg" alt="Товар 3" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-name">Кухонный набор 2 </h3>
-                        <p class="product-price">2000 руб.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">© 2025 Портфолио. Все права защищены.</div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Футер</p>
+        </footer>
     </div>
 </body>
 </html>

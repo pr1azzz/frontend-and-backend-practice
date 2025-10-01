@@ -7,13 +7,26 @@ body {
     min-height: 100vh;
 }
 
+/* ==== ОСНОВНОЙ МАКЕТ СЕТКИ ==== */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
     background: white;
     min-height: 100vh;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
+
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+main.content { grid-area: main; }
+.footer { grid-area: footer; }
 
 /* ==== ШАПКА ==== */
 .header {
@@ -114,11 +127,14 @@ body {
 
 /* ==== НАВЫКИ ==== */
 .skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
     margin: 30px 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .skill-tag {
@@ -130,6 +146,7 @@ body {
     font-size: 14px;
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .skill-tag:hover {
@@ -150,10 +167,15 @@ body {
     font-weight: 300;
 }
 
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 .experience-card {
     background: white;
     padding: 25px;
-    margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-left: 4px solid #667eea;
@@ -178,36 +200,48 @@ body {
 }
 
 /* ==== СТИЛИ ДЛЯ НОВОСТЕЙ ==== */
-.news-item {
+.news-container {
+    display: grid;
+    gap: 25px;
+}
+
+.news-card {
     background: white;
     padding: 25px;
-    margin: 25px 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-left: 4px solid #4facfe;
     transition: transform 0.3s ease;
 }
 
-.news-item:hover {
+.news-card:hover {
     transform: translateX(5px);
 }
 
-.news-item h2 {
+.news-title {
+    font-size: 24px;
     color: #2c3e50;
-    margin-top: 0;
+    margin: 0 0 10px 0;
+    font-weight: 600;
 }
 
-.news-date {
+.news-meta {
     color: #7f8c8d;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin: 0 0 15px 0;
+}
+
+.news-text {
+    color: #34495e;
+    line-height: 1.7;
+    margin: 0;
 }
 
 /* ==== СТИЛИ ДЛЯ ТОВАРОВ ==== */
-.products-container {
+.products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     margin-top: 30px;
 }
 
@@ -284,4 +318,136 @@ body {
     text-align: center;
     padding: 30px;
     margin-top: 50px;
+}
+
+/* ==== АДАПТИВНОСТЬ ==== */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+        font-size: 24px;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+    
+    .nav-link {
+        display: block;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .profile-photo {
+        width: 180px;
+        height: 230px;
+    }
+    
+    .profile-title {
+        font-size: 28px;
+    }
+    
+    .skills-grid,
+    .experience-grid,
+    .products-grid,
+    .news-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .about-me,
+    .contact-info,
+    .experience-card,
+    .news-card {
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .footer {
+        padding: 20px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    .profile-title {
+        font-size: 24px;
+    }
+    
+    .profile-name {
+        font-size: 20px;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 190px;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .skill-tag {
+        padding: 15px 20px;
+        font-size: 13px;
+    }
+    
+    .contact-button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+/* ==== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ НОВОСТЕЙ ==== */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-weight: 300;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.news-title {
+    font-size: 22px;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.news-meta {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    font-style: italic;
+}
+
+.news-text {
+    color: #34495e;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 15px;
 }
