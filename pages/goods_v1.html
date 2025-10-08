@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+<div class="page-container">
+    <header class="header">
+        <h1>Товары</h1>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="../index_v1.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+            <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+            <li class="nav-item"><a class="nav-link active" href="goods.html">Товары</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h2 class="section-title">Каталог товаров</h2>
+
+        <div class="products-section">
+            <!-- Сетка товаров -->
+            <div class="products-grid">
+                <!-- Товар 1 со скидкой -->
+                <article class="product-card product-card--discount" data-id="1" data-price="1000" data-old-price="1500">
+                    <img src="../images/goods1.jpg" alt="Телеграм бот" class="product-card__image">
+                    <h3 class="product-card__name">Телеграм бот</h3>
+                    <p class="product-card__description">Умный телеграм бот с подключением к базе данных и AI-функциями</p>
+                    <div class="product-card__price-container">
+                        <span class="product-card__old-price">1500 ₽</span>
+                        <span class="product-card__price">1000 ₽</span>
+                        <span class="product-card__discount">-33%</span>
+                    </div>
+                    <button class="product-card__button" onclick="addToCart(1)">В корзину</button>
+                </article>
+
+                <!-- Товар 2 - хит продаж -->
+                <article class="product-card product-card--hot" data-id="2" data-price="2000">
+                    <img src="../images/goods2.jpg" alt="Сайт" class="product-card__image">
+                    <h3 class="product-card__name">Современный сайт</h3>
+                    <p class="product-card__description">Адаптивный сайт с современным дизайном и ИИ-функциями</p>
+                    <div class="product-card__price-container">
+                        <span class="product-card__price">2000 ₽</span>
+                    </div>
+                    <button class="product-card__button" onclick="addToCart(2)">В корзину</button>
+                </article>
+
+                <!-- Товар 3 -->
+                <article class="product-card" data-id="3" data-price="3000">
+                    <img src="../images/goods3.jpg" alt="Курс Python" class="product-card__image">
+                    <h3 class="product-card__name">Курс Python Pro</h3>
+                    <p class="product-card__description">Полный курс по Python с практическими заданиями и поддержкой</p>
+                    <div class="product-card__price-container">
+                        <span class="product-card__price">3000 ₽</span>
+                    </div>
+                    <button class="product-card__button" onclick="addToCart(3)">В корзину</button>
+                </article>
+
+                <!-- Товар 4 со скидкой -->
+                <article class="product-card product-card--discount" data-id="4" data-price="2500" data-old-price="4000">
+                    <img src="../images/goods1.jpg" alt="Продвинутый бот" class="product-card__image">
+                    <h3 class="product-card__name">Продвинутый бот</h3>
+                    <p class="product-card__description">Бот с машинным обучением и аналитикой пользовательского поведения</p>
+                    <div class="product-card__price-container">
+                        <span class="product-card__old-price">4000 ₽</span>
+                        <span class="product-card__price">2500 ₽</span>
+                        <span class="product-card__discount">-38%</span>
+                    </div>
+                    <button class="product-card__button" onclick="addToCart(4)">В корзину</button>
+                </article>
+            </div>
+
+            <!-- Боковая панель корзины -->
+            <aside class="cart-sidebar">
+                <h3 class="cart-sidebar__title">🛒 Корзина</h3>
+                <div class="cart-sidebar__items" id="cartItems">
+                    <div class="cart-sidebar__empty" id="cartEmpty">
+                        Корзина пуста
+                    </div>
+                </div>
+                <div class="cart-sidebar__total">
+                    <div class="cart-sidebar__total-row">
+                        <span>Товары:</span>
+                        <span id="subtotal">0 ₽</span>
+                    </div>
+                    <div class="cart-sidebar__total-row">
+                        <span>Скидка:</span>
+                        <span id="discount">0 ₽</span>
+                    </div>
+                    <div class="cart-sidebar__total-row cart-sidebar__total-final">
+                        <span>Итого:</span>
+                        <span id="total">0 ₽</span>
+                    </div>
+                </div>
+                <button class="cart-sidebar__checkout-button" id="checkoutButton" disabled onclick="checkout()">
+                    Оформить заказ
+                </button>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Футер</p>
+    </footer>
+</div>
+
+<script>
+    // Данные товаров
+    const products = {
+        1: { name: "Телеграм бот", price: 1000, oldPrice: 1500, image: "../images/goods1.jpg" },
+        2: { name: "Современный сайт", price: 2000, oldPrice: null, image: "../images/goods2.jpg" },
+        3: { name: "Курс Python Pro", price: 3000, oldPrice: null, image: "../images/goods3.jpg" },
+        4: { name: "Продвинутый бот", price: 2500, oldPrice: 4000, image: "../images/goods1.jpg" }
+    };
+
+    let cart = [];
+
+    // Функция добавления в корзину
+    function addToCart(productId) {
+        const product = products[productId];
+        const existingItem = cart.find(item => item.id === productId);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({
+                id: productId,
+                name: product.name,
+                price: product.price,
+                oldPrice: product.oldPrice,
+                image: product.image,
+                quantity: 1
+            });
+        }
+
+        updateCart();
+        animateButton(productId);
+    }
+
+    // Функция обновления корзины
+    function updateCart() {
+        const cartItems = document.getElementById('cartItems');
+        const cartEmpty = document.getElementById('cartEmpty');
+        const checkoutButton = document.getElementById('checkoutButton');
+
+        cartItems.innerHTML = '';
+
+        if (cart.length === 0) {
+            cartEmpty.style.display = 'block';
+            checkoutButton.disabled = true;
+            return;
+        }
+
+        cartEmpty.style.display = 'none';
+
+        let subtotal = 0;
+        let totalDiscount = 0;
+
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-sidebar__item';
+
+            const itemSubtotal = item.price * item.quantity;
+            const itemDiscount = item.oldPrice ? (item.oldPrice - item.price) * item.quantity : 0;
+
+            subtotal += itemSubtotal;
+            totalDiscount += itemDiscount;
+
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="cart-sidebar__item-image">
+                <div class="cart-sidebar__item-info">
+                    <div class="cart-sidebar__item-name">${item.name}</div>
+                    <div class="cart-sidebar__item-price">${item.price} ₽ × ${item.quantity}</div>
+                </div>
+                <div class="cart-sidebar__item-quantity">
+                    <button class="cart-sidebar__quantity-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="cart-sidebar__quantity-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+                </div>
+                <button class="cart-sidebar__item-remove" onclick="removeFromCart(${item.id})">×</button>
+            `;
+
+            cartItems.appendChild(itemElement);
+        });
+
+        document.getElementById('subtotal').textContent = subtotal + ' ₽';
+        document.getElementById('discount').textContent = '-' + totalDiscount + ' ₽';
+        document.getElementById('total').textContent = (subtotal - totalDiscount) + ' ₽';
+
+        checkoutButton.disabled = false;
+    }
+
+    // Функция изменения количества
+    function changeQuantity(productId, change) {
+        const item = cart.find(item => item.id === productId);
+        if (item) {
+            item.quantity += change;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                updateCart();
+            }
+        }
+    }
+
+    // Функция удаления из корзины
+    function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId);
+        updateCart();
+    }
+
+    // Анимация кнопки
+    function animateButton(productId) {
+        const button = document.querySelector(`[onclick="addToCart(${productId})"]`);
+        button.classList.add('product-card__button--animated');
+        button.textContent = '✓ Добавлено';
+
+        setTimeout(() => {
+            button.classList.remove('product-card__button--animated');
+            button.textContent = 'В корзину';
+        }, 1000);
+    }
+
+    // Оформление заказа
+    function checkout() {
+        if (cart.length === 0) return;
+
+        const total = document.getElementById('total').textContent;
+        alert(`Заказ оформлен!\nСумма: ${total}\nСпасибо за покупку!`);
+
+        cart = [];
+        updateCart();
+    }
+
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCart();
+    });
+</script>
+</body>
+</html>
