@@ -3,57 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости - Семестровая работа</title>
+    <title>Новости - Портфолио</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>Новости</h1>
+            <h1 class="header__title">Новости</h1>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
 
-        <main class="content">
-            <h2 class="section-title">Последние новости</h2>
-            
-            <section class="news-container">
-                <article class="news-card">
-                    <h3 class="news-title">Запуск нового проекта</h3>
-                    <p class="news-meta">01.01.2025 12:00 | Автор: Иванов И.И.</p>
-                    <p class="news-text">Мы рады сообщить о запуске нового проекта, который изменит подход к веб-разработке. Проект включает в себя современные технологии и инновационные решения для создания адаптивных и быстрых веб-приложений.</p>
-                </article>
+        <main class="main">
+            <section class="news">
+                <h2 class="news__title">Последние новости</h2>
+                
+                <div class="news__container">
+                    <article class="news-card">
+                        <h3 class="news-card__title">Запуск нового проекта</h3>
+                        <p class="news-card__meta">01.01.2025 12:00 | Автор: Иванов И.И.</p>
+                        <p class="news-card__text">Мы рады сообщить о запуске нового проекта, который изменит подход к веб-разработке. Проект включает в себя современные технологии и инновационные решения для создания адаптивных и быстрых веб-приложений.</p>
+                    </article>
 
-                <article class="news-card">
-                    <h3 class="news-title">Обновление дизайна портфолио</h3>
-                    <p class="news-meta">15.12.2024 14:30 | Автор: Иванов И.И.</p>
-                    <p class="news-text">Завершено масштабное обновление дизайна портфолио. Теперь сайт использует современные CSS-технологии, включая Grid и Flexbox, для создания адаптивного и привлекательного интерфейса.</p>
-                </article>
+                    <article class="news-card">
+                        <h3 class="news-card__title">Обновление дизайна портфолио</h3>
+                        <p class="news-card__meta">15.12.2024 14:30 | Автор: Иванов И.И.</p>
+                        <p class="news-card__text">Завершено масштабное обновление дизайна портфолио. Теперь сайт использует современные CSS-технологии, включая Grid и Flexbox, для создания адаптивного и привлекательного интерфейса.</p>
+                    </article>
 
-                <article class="news-card">
-                    <h3 class="news-title">Изучение новых технологий</h3>
-                    <p class="news-meta">30.11.2024 10:15 | Автор: Иванов И.И.</p>
-                    <p class="news-text">Продолжаем изучение современных фронтенд-технологий. В планах - освоение React.js и Node.js для создания полноценных веб-приложений с современным стеком технологий.</p>
-                </article>
+                    <article class="news-card">
+                        <h3 class="news-card__title">Изучение новых технологий</h3>
+                        <p class="news-card__meta">30.11.2024 10:15 | Автор: Иванов И.И.</p>
+                        <p class="news-card__text">Продолжаем изучение современных фронтенд-технологий. В планах - освоение React.js и Node.js для создания полноценных веб-приложений с современным стеком технологий.</p>
+                    </article>
 
-                <article class="news-card">
-                    <h3 class="news-title">Успешная защита проекта</h3>
-                    <p class="news-meta">20.11.2024 16:45 | Автор: Иванов И.И.</p>
-                    <p class="news-text">Состоялась успешная защита семестрового проекта по фронтенд-разработке. Проект получил высокую оценку за современный дизайн и качественную реализацию.</p>
-                </article>
+                    <article class="news-card">
+                        <h3 class="news-card__title">Успешная защита проекта</h3>
+                        <p class="news-card__meta">20.11.2024 16:45 | Автор: Иванов И.И.</p>
+                        <p class="news-card__text">Состоялась успешная защита семестрового проекта по фронтенд-разработке. Проект получил высокую оценку за современный дизайн и качественную реализацию.</p>
+                    </article>
+                </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p>Футер</p>
+            <p class="footer__text">© 2024 Новостной портал</p>
         </footer>
     </div>
 </body>

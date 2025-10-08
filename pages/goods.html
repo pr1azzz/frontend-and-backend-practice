@@ -3,52 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары - Семестровая работа</title>
+    <title>Товары - Портфолио</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>Наши товары</h1>
+            <h1 class="header__title">Наши товары</h1>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
 
-        <main class="content">
-            <section>
-                <h2 class="section-title">Каталог товаров</h2>
-                <p>Мы предлагаем широкий ассортимент качественных товаров по доступным ценам.</p>
+        <main class="main">
+            <section class="products">
+                <h2 class="products__title">Каталог товаров</h2>
+                <p class="about__text">Мы предлагаем широкий ассортимент качественных товаров по доступным ценам.</p>
                 
-                <div class="products-grid">
-                    <article class="product-card">
-                        <img src="../images/img.tovar1.jpg" alt="Товар 1" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-name">Трактор</h3>
-                            <p class="product-price">100.000 ₽</p>
+                <div class="products__grid">
+                    <article class="product-card product-card--sale">
+                        <img src="../images/img.tovar1.jpg" alt="Товар 1" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__name">Современный ноутбук</h3>
+                            <div>
+                                <span class="product-card__price--old">50 000 ₽</span>
+                                <span class="product-card__price">45 000 ₽</span>
+                            </div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <img src="../images/Img.tovar2.webp" alt="Товар 2" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-name">Кухонный набор 1</h3>
-                            <p class="product-price">75.000 ₽</p>
+                        <img src="../images/Img.tovar2.webp" alt="Товар 2" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__name">Беспроводные наушники</h3>
+                            <div class="product-card__price">8 500 ₽</div>
                         </div>
                     </article>
 
                     <article class="product-card">
-                        <img src="../images/img.tovar3.jpg" alt="Товар 3" class="product-image">
-                        <div class="product-info">
-                            <h3 class="product-name">Кухонный набор 2</h3>
-                            <p class="product-price">32.000 ₽</p>
+                        <img src="../images/img.tovar3.jpg" alt="Товар 3" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__name">Смартфон</h3>
+                            <div class="product-card__price">32 000 ₽</div>
                         </div>
                     </article>
                 </div>
@@ -56,7 +69,7 @@
         </main>
 
         <footer class="footer">
-            <p>Футер</p>
+            <p class="footer__text">© 2024 Магазин электроники</p>
         </footer>
     </div>
 </body>

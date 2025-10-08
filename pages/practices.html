@@ -3,46 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практики - Семестровая работа</title>
+    <title>Практики - Портфолио</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>Практические работы</h1>
+            <h1 class="header__title">Практические работы</h1>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--active" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
 
-        <main class="content">
-            <section class="experience-grid">
-                <article class="experience-card">
-                    <h3 class="experience-title">Практика 1: Основы HTML</h3>
-                    <p class="experience-desc">Изучение базовой структуры HTML-документа, тегов и атрибутов. Создание первой веб-страницы с семантической разметкой.</p>
-                </article>
+        <main class="main">
+            <section class="experience">
+                <h2 class="experience__title">Мои практические работы</h2>
+                <div class="experience__grid">
+                    <article class="experience-card experience-card--featured">
+                        <h3 class="experience-card__title">Практика 1: Основы HTML</h3>
+                        <p class="experience-card__desc">Изучение базовой структуры HTML-документа, тегов и атрибутов. Создание первой веб-страницы с семантической разметкой.</p>
+                    </article>
 
-                <article class="experience-card">
-                    <h3 class="experience-title">Практика 2: Основы CSS</h3>
-                    <p class="experience-desc">Работа с каскадными таблицами стилей. Изучение селекторов, свойств и значений. Создание адаптивного дизайна.</p>
-                </article>
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Практика 2: Основы CSS</h3>
+                        <p class="experience-card__desc">Работа с каскадными таблицами стилей. Изучение селекторов, свойств и значений. Создание адаптивного дизайна.</p>
+                    </article>
 
-                <article class="experience-card">
-                    <h3 class="experience-title">Практика 3: Flexbox и Grid</h3>
-                    <p class="experience-desc">Освоение современных методов вёрстки с использованием Flexbox и CSS Grid для создания сложных макетов.</p>
-                </article>
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Практика 3: Flexbox и Grid</h3>
+                        <p class="experience-card__desc">Освоение современных методов вёрстки с использованием Flexbox и CSS Grid для создания сложных макетов.</p>
+                    </article>
+
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Практика 4: Семантические теги</h3>
+                        <p class="experience-card__desc">Изучение семантических тегов HTML5 для улучшения доступности и SEO-оптимизации веб-страниц.</p>
+                    </article>
+
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Практика 5: Формы и модальные окна</h3>
+                        <p class="experience-card__desc">Создание интерактивных форм, валидация данных и работа с модальными окнами для улучшения пользовательского опыта.</p>
+                    </article>
+
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Практика 6: БЭМ методология</h3>
+                        <p class="experience-card__desc">Освоение методологии БЭМ для создания масштабируемой и поддерживаемой структуры CSS-кода.</p>
+                    </article>
+                </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p>Футер</p>
+            <p class="footer__text">© 2024 Мои практические работы</p>
         </footer>
     </div>
 </body>
