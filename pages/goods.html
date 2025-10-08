@@ -3,237 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары</title>
+    <title>Товары - Магазин</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .product-card {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
 </head>
 <body class="bg-light">
-<div class="container-fluid p-0">
-    <!-- Header -->
-    <header class="bg-primary text-white py-4">
-        <div class="container">
-            <div class="row align-items-center">
+    <div class="container-fluid p-0">
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Магазин Коржов</h1>
+                        <p class="mb-0 opacity-75">Товары премиум-класса</p>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-sm theme-btn btn-outline-light">
+                            <i class="bi bi-moon-fill"></i> Тёмная
+                        </button>
+                        <span class="badge bg-light text-primary">Премиум</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index-v1.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">
+                                <i class="bi bi-newspaper me-1"></i>Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="practices.html">
+                                <i class="bi bi-code-slash me-1"></i>Практики
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="goods-v1.html">
+                                <i class="bi bi-cart me-1"></i>Товары
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-4">
+            <div class="row mb-4">
                 <div class="col">
-                    <h1 class="h3 mb-1">Товары</h1>
-                    <p class="mb-0 opacity-75">Каталог наших продуктов</p>
+                    <h2 class="text-center text-primary">Каталог товаров</h2>
+                    <p class="text-center text-muted">Товары премиум-класса</p>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="bi bi-house me-1"></i>Главная
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="news.html">
-                            <i class="bi bi-newspaper me-1"></i>Новости
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="practices.html">
-                            <i class="bi bi-code-slash me-1"></i>Практики
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="goods.html">
-                            <i class="bi bi-cart me-1"></i>Товары
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacts.html">
-                            <i class="bi bi-telephone me-1"></i>Контакты
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container my-4">
-        <div class="row mb-4">
-            <div class="col">
-                <h2 class="text-center mb-4">Каталог товаров</h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <!-- Product 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm product-card">
-                    <img src="../images/img.tovar1.jpg" class="card-img-top product-card__image" alt="Телеграм бот" style="height: 200px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title product-card__title">Трактор</h5>
-                        <p class="card-text product-card__description flex-grow-1">
-                            Отличный трактор, для работы в поле
-                        </p>
-                        <div class="mt-auto">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="h4 text-primary product-card__price">100.000 ₽</span>
-                                <span class="badge bg-success product-card__discount">-10%</span>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card shadow-sm h-100 position-relative">
+                        <span class="badge bg-danger discount-badge">СКИДКА</span>
+                        <img src="../images/goods1.png" class="card-img-top product-img" alt="Костюм">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Ноутубук ASUS Vivobook</h5>
+                            <p class="card-text flex-grow-1">Мощный ноутбук не только для учёбы,но и для игр.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="h5 text-primary mb-0">100 000 ₽</span>
+                                    <small class="text-muted text-decoration-line-through">150 000 ₽</small>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="bi bi-cart-plus me-2"></i>В корзину
+                                </button>
                             </div>
-                            <button class="btn btn-primary w-100 product-card__button" onclick="addToCart(1)">
-                                <i class="bi bi-cart-plus me-2"></i>В корзину
-                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card shadow-sm h-100">
+                        <img src="../images/goods2.png" class="card-img-top product-img" alt="Шляпа">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Беспроводные наушники</h5>
+                            <p class="card-text flex-grow-1">Отличное качество звука и хороший микрофон</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="h5 text-primary mb-0">7 000 ₽</span>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="bi bi-cart-plus me-2"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card shadow-sm h-100 position-relative">
+                        <span class="badge bg-danger discount-badge">СКИДКА</span>
+                        <img src="../images/goods3.png" class="card-img-top product-img" alt="Туфли">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Игровая клавиатура</h5>
+                            <p class="card-text flex-grow-1">Синие свечи клавиатуры оставляют приятные ощущения от игр.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="h5 text-primary mb-0">6000 ₽</span>
+                                    <small class="text-muted text-decoration-line-through">7500 ₽</small>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="bi bi-cart-plus me-2"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card shadow-sm h-100">
+                        <img src="../images/goods4.png" class="card-img-top product-img" alt="Галстук">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Телефон Galaxy A24</h5>
+                            <p class="card-text flex-grow-1">мощный процессор и 120 герц экран.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="h5 text-primary mb-0">25 000 ₽</span>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="bi bi-cart-plus me-2"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card shadow-sm h-100">
+                        <img src="../images/мышь.png" class="card-img-top product-img" alt="Ремень">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Игровая мышь ARDOR Gaming</h5>
+                            <p class="card-text flex-grow-1">Быстрый отклик у мышки для игр и работы.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="h5 text-primary mb-0">3 200 ₽</span>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="bi bi-cart-plus me-2"></i>В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card shadow-sm h-100 position-relative">
+                        <span class="badge bg-success discount-badge">НОВИНКА</span>
+                        <img src="../images/комп.png" class="card-img-top product-img" alt="Компьютер">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Игровой компьютер</h5>
+                            <p class="card-text flex-grow-1">Мощный игровой компьютер с видеокартой RTX 4060, и процессором i7 13700k</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="h5 text-primary mb-0">150 000 ₽</span>
+                                </div>
+                                <button class="btn btn-primary w-100">
+                                    <i class="bi bi-cart-plus me-2"></i>В корзину
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm product-card">
-                    <img src="../images/Img.tovar2.webp" class="card-img-top product-card__image" alt="Сайт" style="height: 200px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title product-card__title">Кухонный набор 1</h5>
-                        <p class="card-text product-card__description flex-grow-1">
-                            Отличный кухонный набор, для вас
-                        </p>
-                        <div class="mt-auto">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="h4 text-primary product-card__price">80.000 ₽</span>
-                                <span class="badge bg-danger product-card__discount product-card__discount--hot">Хит</span>
-                            </div>
-                            <button class="btn btn-primary w-100 product-card__button" onclick="addToCart(2)">
-                                <i class="bi bi-cart-plus me-2"></i>В корзину
-                            </button>
-                        </div>
+
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Магазин Коржов. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Доставка и оплата</a>
                     </div>
                 </div>
             </div>
+        </footer>
+    </div>
 
-            <!-- Product 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm product-card">
-                    <img src="../images/img.tovar3.jpg" class="card-img-top product-card__image" alt="Курс Python" style="height: 200px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title product-card__title">Кухонный набор 2</h5>
-                        <p class="card-text product-card__description flex-grow-1">
-                           Отличный набор, для кухни
-                        </p>
-                        <div class="mt-auto">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="h4 text-primary product-card__price">12.000 ₽</span>
-                            </div>
-                            <button class="btn btn-primary w-100 product-card__button" onclick="addToCart(3)">
-                                <i class="bi bi-cart-plus me-2"></i>В корзину
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2024 Магазин товаров. Все права защищены.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-                    <a href="#" class="text-white text-decoration-none">Доставка и оплата</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function addToCart(productId) {
-        const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            if (card.querySelector('.product-card__button').onclick.toString().includes(productId)) {
-                card.classList.add('product-card--selected');
-                const button = card.querySelector('.product-card__button');
-                button.textContent = '✓ В корзине';
-                button.classList.remove('btn-primary');
-                button.classList.add('btn-success');
-
-                // Показываем уведомление
-                showNotification('Товар добавлен в корзину!');
-            }
-        });
-    }
-
-    function showNotification(message) {
-        // Создаем элемент уведомления
-        const notification = document.createElement('div');
-        notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
-        notification.style.zIndex = '1050';
-        notification.textContent = message;
-
-        document.body.appendChild(notification);
-
-        // Удаляем уведомление через 3 секунды
-        setTimeout(() => {
-            notification.remove();
-        }, 3000);
-    }
-
-    // Добавляем обработчики для hover эффектов
-    document.addEventListener('DOMContentLoaded', function() {
-        const productCards = document.querySelectorAll('.product-card');
-
-        productCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.classList.add('product-card--hover');
-            });
-
-            card.addEventListener('mouseleave', function() {
-                this.classList.remove('product-card--hover');
-            });
-        });
-    });
-</script>
-
-<style>
-    .product-card {
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-    }
-
-    .product-card--hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
-        border-color: #007bff;
-    }
-
-    .product-card--selected {
-        border-color: #28a745;
-        background-color: #f8fff9;
-    }
-
-    .product-card__image {
-        transition: transform 0.3s ease;
-    }
-
-    .product-card:hover .product-card__image {
-        transform: scale(1.05);
-    }
-
-    .product-card__discount--hot {
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-</style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/theme-toggle.js"></script>
 </body>
 </html>
